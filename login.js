@@ -13,27 +13,14 @@
 //         return false;
 //     }
 // }
-
-//     document.querySelector("form").addEventListener("submit", function (e) {
-//     e.preventDefault();
-
-//   let email = document.getElementById("email");
-//   let password = document.getElementById("password");
-//   let error = document.getElementById("error");
-
-//   let regexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-//   if (!email || !regexp) {
-//     error.textContent = "Please enter a valid email.";
-//     error.style.color="red";}
 document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const error = document.getElementById("error");
+  let email = document.getElementById("email").value.trim();
+  let password = document.getElementById("password").value.trim();
+  let error = document.getElementById("error");
 
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  let isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   if (!email || !isValidEmail) {
     error.textContent = "Please enter a valid email.";
@@ -53,7 +40,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   console.log("Login successful");
 });
 
-// Password strength check
+
 function checkPasswordStrength(password) {
   const strengthIndicator = document.getElementById("strength-indicator");
 
@@ -72,16 +59,17 @@ function checkPasswordStrength(password) {
     result = { level: "medium", color: "orange", text: "Medium" };
   }
 
-  // Show strength visually
+  
   strengthIndicator.textContent = result.text;
   strengthIndicator.style.color = result.color;
 
   return result;
 }
 
-// Show strength as user types
+
 document.getElementById("password").addEventListener("input", function () {
   checkPasswordStrength(this.value.trim());
 });
+
 
 
