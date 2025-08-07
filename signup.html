@@ -38,10 +38,13 @@
         <div class="mb-3">
           <label for="email" class="form-label text-white">Email address</label>
           <input type="email" class="form-control" id="email" placeholder="Enter email">
+             <label for="error" id="error"></label>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label text-white">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password">
+            <small id="strength-indicator" class="form-text"></small>
+
         </div>
         <div class="mb-3">
           <label for="password" class="form-label text-white"> Confirm Password</label>
@@ -74,6 +77,8 @@
     </form>
     <p class="login-text">Already have an account? <a href="login.html">Log in</a></p> 
   </div>
+<script src="login.js"></script>
 
 </body>
+
 </html>
